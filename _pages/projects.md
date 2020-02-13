@@ -8,7 +8,7 @@ author_profile: true
 
 Joint analysis of multiple single cell RNA-sequencing (scRNA-seq) data is confounded by technical batch effects across experiments, biological or environmental variability across cells, and different capture processes across sequencing platforms. Manifold alignment is a principled, effective tool for integrating multiple data sets and controlling for confounding factors. We demonstrate that the semi-supervised t-distributed Gaussian process latent variable model (sstGPLVM), which projects the data onto a mixture of fixed and latent dimensions, can learn a unified low-dimensional embedding for multiple single cell experiments with minimal assumptions. We show the efficacy of the model as compared with state-of-the-art methods for single cell data integration on simulated data, pancreas cells from four sequencing technologies, stem cells from male and female donors, and mouse brain cells from both spatial seqFISH+ and traditional scRNA-seq.
 
-Prepint [here](https://doi.org/10.1101/2020.01.14.906313)
+Preprint [here](https://doi.org/10.1101/2020.01.14.906313)
 
 ## Robust dimension reduction for noisy single cell RNA-seq genomic data
 
