@@ -4,15 +4,5 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am a PhD candidate in Chemical and Biological Engineering at Princeton University. My work, supervised by Dr. Barbara Engelhardt (Deparment of Computer Science), focuses on developing and applying Bayesian machine learning models to uncover biological signals from a variety of single cell data. Before my PhD I was a Biomedical Engineering major at Duke University, where I worked on novel peptide synthesis for improved drug delivery with Dr. Ashutosh Chilkoti.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
