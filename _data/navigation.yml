@@ -1,8 +1,6 @@
 - name: Home
   link: /
-- name: About
+- name: About Me
   link: /about.html
-- name: Blog
+- name: Archit's Masala Dabba
   link: /blog.html
-- name: Staff
-  link: /staff.html
