@@ -4,7 +4,7 @@ title: Home
 ---
 # Welcome! You've reached Archit Verma's website.
 
-![Headshot](https://github.com/architverma1/architverma1.github.io/assets/img/av_gladstone_headshot.jpeg)
+![Headshot](architverma1.github.io/assets/img/av_gladstone_headshot.jpeg | width=100)
 
 I am a post-doc at the Gladstone Institutes with Dr. Barbara Engelhardt. My research focus is  currently developing machine learning methods for protein engineering, with the hope of improving protein eningeering abilities for addressing issues in climate change and sustainability. 
 
