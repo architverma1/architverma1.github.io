@@ -12,7 +12,7 @@ I am a Bioinformatics Fellow at the Gladstone Institues advised by <a href="http
 ### Published Work
 
 #### A self-exciting point process to study multicellular spatial signaling patterns
-*with <a href="https://sidujena.github.io"> Siddartha Jena </a>*
+*with <a href="https://sidujena.github.io"> Siddhartha Jena </a>*
 
 Cells are under constant pressure to integrate information from both their environment and internal cellular processes. However, these effects often use the same signaling pathways, making autonomous and coupled signaling difficult to decouple from one another. We present a statistical modeling framework, the cellular point process (CPP), that decouples these two modes of signaling using videos of living, actively signaling cells as input. Our model reveals modulation of autonomous and coupled signaling parameters in a number of contexts ranging from pharmacological treatment to wound healing that were previously unavailable. The CPP enhances our understanding of cellular information processing and can be extended to a wide range of systems. [in PNAS](https://www.pnas.org/doi/10.1073/pnas.2026123118)
 
