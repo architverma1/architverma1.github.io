@@ -55,4 +55,4 @@ In my doctoral work I transitioned to a computational role, advised by Dr. Barba
 
 After my completing my PhD in 2021 I joined IBM as a data scientist in the Federal Analytics and Cognitive Consulting division. My work there focused on detecting anomalies in ship tracking data and predicting medical supply shortages from time series data. 
 
-I returned to work with Dr. Engelhardt as a Bioinformatics Fellow in 2022 to return to my biology roots. I am currently working primarily on protein phenotype prediction and 
+I returned to work with Dr. Engelhardt as a Bioinformatics Fellow in 2022 to return to my biology roots. I am currently working primarily on machine learning for proteins and biological imaging.
