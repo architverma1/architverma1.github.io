@@ -7,6 +7,8 @@ I am a Bioinformatics Fellow at the Gladstone Institues advised by <a href="http
 
 ## Postdoctoral Work - Gladstone Institutes
 
+Stay tuned!
+
 ## PhD Work - Princeton CBE
 
 ### Published Work
@@ -14,9 +16,13 @@ I am a Bioinformatics Fellow at the Gladstone Institues advised by <a href="http
 #### A self-exciting point process to study multicellular spatial signaling patterns
 *with <a href="https://sidujena.github.io"> Siddhartha Jena </a>*
 
+![CPP-Fig](/assets/img/cpp.jpg)
+
 Cells are under constant pressure to integrate information from both their environment and internal cellular processes. However, these effects often use the same signaling pathways, making autonomous and coupled signaling difficult to decouple from one another. We present a statistical modeling framework, the cellular point process (CPP), that decouples these two modes of signaling using videos of living, actively signaling cells as input. Our model reveals modulation of autonomous and coupled signaling parameters in a number of contexts ranging from pharmacological treatment to wound healing that were previously unavailable. The CPP enhances our understanding of cellular information processing and can be extended to a wide range of systems. [in PNAS](https://www.pnas.org/doi/10.1073/pnas.2026123118)
 
 #### A robust nonlinear low-dimensional manifold for single cell RNA-seq data
+
+![CPP-Fig](/assets/img/tgplvm.jpg)
 
 Modern developments in single-cell sequencing technologies enable broad insights into cellular state. Single-cell RNA sequencing (scRNA-seq) can be used to explore cell types, states, and developmental trajectories to broaden our understanding of cellular heterogeneity in tissues and organs. Analysis of these sparse, high-dimensional experimental results requires dimension reduction. Several methods have been developed to estimate low-dimensional embeddings for filtered and normalized single-cell data. However, methods have yet to be developed for unfiltered and unnormalized count data that estimate uncertainty in the low-dimensional space. We present a nonlinear latent variable model with robust, heavy-tailed error and adaptive kernel learning to estimate low-dimensional nonlinear structure in scRNA-seq data. [in BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03625-z)
 
