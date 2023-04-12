@@ -27,11 +27,13 @@ Then the clinker (alite and belite) is mixed with crushed gypsum, fly ash, and o
 
 The concrete is either cast into pre-made bricks at the factory or poured on-site. Finally, freshly-poured concrete hardens through a process called “curing,” where calcium silicates react with water to form calcium hydroxide crystals (5). This process, which requires maintaining the concrete at an optimal level of moisture for multiple weeks, is essential for concrete to reach its full strength.
 
-Thus there are two types of emissions from cement production: those from the energy to produce heat (~40% of emissions), and those released when limestone becomes lime (>=50%) (6). High-heat processes are notoriously hard to electrify, and the chemical emissions aren’t energy-related at all, so this is a situation where solar panels can’t save us. The graphic below illustrates the entire cement production process, from sourcing raw materials to transporting the finished product. As you can see, the heat and chemistry during clinker production account for the vast majority of CO<sub>2</sub> emitted.
+**Thus there are two types of emissions from cement production: those from the energy to produce heat (~40% of emissions), and those released when limestone becomes lime (>=50%) (6).** High-heat processes are notoriously hard to electrify, and the chemical emissions aren’t energy-related at all, so this is a situation where solar panels can’t save us. The graphic below illustrates the entire cement production process, from sourcing raw materials to transporting the finished product. As you can see, the heat and chemistry during clinker production account for the vast majority of CO<sub>2</sub> emitted.
 
-Use photosynthetic microbes to make limestone with CO<sub>2</sub> from the atmosphere. Then burning it is net-zero, and building with it directly is carbon negative!
+How can biology make this process more sustainable? There are two main approaches:
 
-Use biologically-fixed carbon (wood, polymers, ash) as SCMs, sequestering carbon.
+1. Use photosynthetic microbes to make limestone with CO<sub>2</sub> from the atmosphere. Then burning it is net-zero, and building with it directly is carbon negative!
+
+2. Use biologically-fixed carbon (wood, polymers, ash) as SCMs, sequestering carbon.
 
 Biological SCMs could be very diverse, and they’re part of a larger conversation about carbon-negative SCMs. Research is underway to mix clinker with everything from biochar (7) to the lignin-rich byproducts of biofuel production (8). On the other hand, recent research on abiotic CO<sub>2</sub> utilization in concrete casts doubt on the true carbon impact after emissions for the extra processes are accounted for (9). This will be a recurring theme in our newsletter: you can’t truly know the impact of some shiny new technology without careful Life Cycle Analysis (LCA), which quantifies emissions for the whole process from “cradle to grave.”
 
