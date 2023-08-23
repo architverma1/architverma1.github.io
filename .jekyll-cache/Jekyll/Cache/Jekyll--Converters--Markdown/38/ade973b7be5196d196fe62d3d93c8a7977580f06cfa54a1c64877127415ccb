@@ -1,0 +1,26 @@
+I"�<p>Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits.</p>
+
+<p>Recently I’ve been exploring opportuntities in AI/ML X Biotechnology in the context of startups. Several companies have been founded on the premise that artificial intelligence and machine learning can help speed up the discovery process of both drugs, delivery vehicles and targets. If you read twitter or the blogosphere, the potential of new AI/ML techniques to delivery value seems obvious. However, when I talk to biologists on the ground, it seems like we’re still pretty far from actually using ML systems for drug discovery and it’s not totally clear if it will actually generate that much economic value above current techniques (namely random screens or a biologist/chemist using their knowledge to design molecules).</p>
+
+<p>I wanted to try to understand where and when the ML tools that have been developed create “economic value,” in the context of increasing profits. What will follow is an attempt to quantiatively model what properties a ML pipeline needs to improve profits. There is a tradeoff between improved accuracy increasing revenut and the costs of training and serving computational models.</p>
+
+<p>We’ll explore two cases where AI/ML systems are currently seen as viable strategies: targeting advertisements and optimizing drug design. In both we’ll start with a general model with generally defined functions to model the profit change from implmenting such a system. Then we’ll plug in some simple functions to get some order-of-magnitude estimates for what conditions are required to make an AI/ML system profitable.</p>
+
+<h2 id="targeting-advertisement-with-classifiers">Targeting Advertisement with Classifiers</h2>
+
+<p>Every time we open the internet we are bombarded with advertisements: at the top of google results, in the middle of a recipe, or at the bottom of an article. The internet advertising economy is massive, powering the profits of the major tech companies for the last two decades. Can ML push those profits higher? The massive investment in research by firms such as Google and Microsoft seems to suggest so. Let’s dig in!</p>
+
+<h3 id="a-general-model">A general model</h3>
+
+<p>The profit, $ P $, a firm generates is the difference between the revenues, $R$, and the costs $C$.</p>
+
+\[P = R - C\]
+
+<p>Let’s start with the revenue side. For simplicity, lets say a company sells one product. It can serve ads to customer $i \in 1,…,N$. Lets say the company has $K$ different advertisements and can serve each customer any $a \in 1,…,K$. Each customer has a probability of clicking through on the ad served and purchasing the product $p_{i,a}$,and will spend some amount $q_i$. So under some strategy $\mathcal{S}$ that maps customer $i$ to ad $a(\mathcal{S},i)$, the revenue $R(\mathcal{S})$ is:</p>
+
+\[R(\mathcal{S}) =  q\Sigma_{i = 0}^{N} p_{i, a(\mathcal{S},i)}\]
+
+<p>What we’re really interested in the change in profit, and so the change in revenue (and later costs). If we switch from some old strategy $\mathcal{S_0}$ to a new “AI” strategy $\mathcal{S_{AI}}$, the change in revenue is:</p>
+
+\[\Delta R = R(\mathcal{S_{AI}} - R(\mathcal{S_0}) = q\]
+:ET

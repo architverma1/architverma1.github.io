@@ -1,0 +1,24 @@
+I"<p><em>Now you can’t hold it</em> <br />
+<em>But you know it’s there</em> <br />
+<em>Here there and everywhere…It’s Electric!</em> <br /></p>
+
+<p>-Marcia Griffiths, Electric Boogie</p>
+
+<p>Electricity generation is responsible for 25% of US emissions [1], and demand is expected to double by 2050 due to electrification of vehicles, heating, and industry [2]. This is one climate problem we know how to solve, however: replace fossil fuels with renewables as quickly as possible. So far, it’s a success story. In 2022, 23% of US electricity came from renewables [3], and more than half of new capacity came from solar photovoltaics (PV) and wind [4]. The scale of the challenge is still huge–to reach net-zero emissions by 2050, we need to double the rate of renewable additions in three years [2]–but in a world with lots of gloomy climate news, the explosive growth of renewable electricity is a cause for hope.</p>
+
+<p>Renewables will allow us to change the foundation of our economy from heat to electrons. Today, we burn fossil fuels and make chemicals and materials at high heat/pressure, releasing CO2 and wasting energy. In an electron-economy, the production of power, chemicals, and materials takes place at room temperature using electrochemical or electromechanical processes. However, realizing this vision will require us to get really good at managing electrons.</p>
+
+<p>For example, solar PV and wind force us to manage variability in electron supply, due to daily and seasonal cycles which we can’t control and weather events which we can’t predict. Once grid capacity is ~80% renewables, grid operators have few tools to meet demand when solar and wind dip [5]. A system whose annual capacity matched annual demand would have 80+ days where instantaneous supply could not meet instantaneous demand [5]. In a system of 100% renewables, meeting demand at all hours requires massive overdeployment of 5-8 times peak capacity, unless we ration electricity [6]. Because the marginal cost of electricity skyrockets in those doldrums, getting from 80% to 100% renewables is extremely challenging.</p>
+
+<p>Top-down electricity modelers often advocate meeting this demand with “firm” low-carbon assets like nuclear energy or natural gas with carbon capture [2,6]. However, the widespread use of nuclear energy is hampered by risks (real and perceived) of accidents, waste, and proliferation. Continued reliance on natural gas maintains the political and economic power of fossil fuel companies, and they might not use their reserves judiciously once they’ve deployed the capital to develop a project. Most pragmatically, both options have much higher capital costs than renewables, and they’re more expensive most hours of the year.</p>
+
+<p>The key to a grid with 100% renewables is Long-Duration Energy Storage (LDES), systems which can discharge at full power for 10+ hours. Grid operators already use Lithium-ion (Li-ion) batteries to shift load by a few hours [7]. Unfortunately, Li-ion batteries are uneconomical for LDES because they have a high capex for storage capacity (&gt;$200/kWh) and can typically only discharge for 4-6 hours. In contrast, recent TEAs suggest that LDES must cost less than $20/kWh with 100-hr storage to have a true impact [8].</p>
+
+<p>One promising technology for LDES is the flow battery. We’ll dig into the tech behind flow batteries below, but any battery needs charge-carrying molecules called electrolytes. Most flow batteries today use electrolytes made with vanadium, a rare, expensive element mostly mined in Russia and China. It also suffers from low energy density and electrode degradation.</p>
+
+<p>That’s where biology comes in: cells have evolved to manipulate electrons with nanoscale precision, repeatedly for decades. For example, every animal cell has &gt;1000 mitochondria, which use high energy electrons to make ATP, the chemical fuel for life. Figure 1 shows the mitochondrial “electron transport chain,” where electrons flow between biomolecular machines to drive ATP synthesis. The exquisite spatial and temporal control of electrons in mitochondria arguably surpasses any engineered system, and it’s happening in every cell all the time.</p>
+
+<p>Can we harness this biological control of electrons, for example by using biomolecules as electrolytes? We think biotech can help us control electrons to build a renewable electron-economy, and we’re going to explore applications in LDES and beyond.</p>
+
+<p>Read the rest <a href="https://reductase.substack.com/p/the-body-electric-biomolecules-for">here</a></p>
+:ET

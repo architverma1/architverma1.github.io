@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>When is AIML worth it?</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="When is AIML worth it?" />
+<meta name="author" content="Archit Verma" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits." />
+<meta property="og:description" content="Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits." />
+<link rel="canonical" href="http://localhost:4000/2023/08/22/mlValue.html" />
+<meta property="og:url" content="http://localhost:4000/2023/08/22/mlValue.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-22T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="When is AIML worth it?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Archit Verma"},"dateModified":"2023-08-22T00:00:00-07:00","datePublished":"2023-08-22T00:00:00-07:00","description":"Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits.","headline":"When is AIML worth it?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/08/22/mlValue.html"},"url":"http://localhost:4000/2023/08/22/mlValue.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/"></a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About Me</a><a class="page-link" href="/blog.html">Masala Dabba</a><a class="page-link" href="/">Home</a><a class="page-link" href="/research.html">Research</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">When is AIML worth it?</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-08-22T00:00:00-07:00" itemprop="datePublished">
+        Aug 22, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Archit Verma</span></span></p>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };
+  </script>
+
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits.</p>
+
+<p>Recently I’ve been exploring opportuntities in AI/ML X Biotechnology in the context of startups. Several companies have been founded on the premise that artificial intelligence and machine learning can help speed up the discovery process of both drugs, delivery vehicles and targets. If you read twitter or the blogosphere, the potential of new AI/ML techniques to delivery value seems obvious. However, when I talk to biologists on the ground, it seems like we’re still pretty far from actually using ML systems for drug discovery and it’s not totally clear if it will actually generate that much economic value above current techniques (namely random screens or a biologist/chemist using their knowledge to design molecules).</p>
+
+<p>I wanted to try to understand where and when the ML tools that have been developed create “economic value,” in the context of increasing profits. What will follow is an attempt to quantiatively model what properties a ML pipeline needs to improve profits. There is a tradeoff between improved accuracy increasing revenut and the costs of training and serving computational models.</p>
+
+<p>We’ll explore two cases where AI/ML systems are currently seen as viable strategies: targeting advertisements and optimizing drug design. In both we’ll start with a general model with generally defined functions to model the profit change from implmenting such a system. Then we’ll plug in some simple functions to get some order-of-magnitude estimates for what conditions are required to make an AI/ML system profitable.</p>
+
+<h2 id="targeting-advertisement-with-classifiers">Targeting Advertisement with Classifiers</h2>
+
+<p>Every time we open the internet we are bombarded with advertisements: at the top of google results, in the middle of a recipe, or at the bottom of an article. The internet advertising economy is massive, powering the profits of the major tech companies for the last two decades. Can ML push those profits higher? The massive investment in research by firms such as Google and Microsoft seems to suggest so. Let’s dig in!</p>
+
+<h3 id="a-general-model">A general model</h3>
+
+<p>The profit, $ P $, a firm generates is the difference between the revenues, $R$, and the costs $C$.</p>
+
+\[P = R - C\]
+
+<p>Let’s start with the revenue side. For simplicity, lets say a company sells one product. It can serve ads to customer $i \in 1,…,N$. Lets say the company has $K$ different advertisements and can serve each customer any $a \in 1,…,K$. Each customer has a probability of clicking through on the ad served and purchasing the product $p_{i,a}$,and will spend some amount $q_i$. So under some strategy $\mathcal{S}$ that maps customer $i$ to ad $a(\mathcal{S},i)$, the revenue $R(\mathcal{S})$ is:</p>
+
+\[R(\mathcal{S}) =  \sum_{i = 0}^{N} p_{i, a(\mathcal{S},i)} q_i\]
+
+<p>What we’re really interested in the change in profit, and so the change in revenue (and later costs). If we switch from some old strategy $\mathcal{S_0}$ to a new “AI” strategy $\mathcal{S_{AI}}$, the change in revenue, assuming the purchasing amount remains constant, is:</p>
+
+\[\Delta R = R(\mathcal{S_{AI}}) - R(\mathcal{S_0}) = \sum_{i = 0}^{N} (p_{i, a(\mathcal{S_{AI}},i)} - p_{i, a(\mathcal{S_0},i)}) q_i\]
+
+<p>Now let’s turn our attention to the cost side. A general model of the cost of AI is hard to pin down specifically. For this exercise, we’ll decompose the costs of some AI strategy into three parts:</p>
+
+<ol>
+  <li>Data collection and storage, $DC$</li>
+  <li>Model training, $MT$</li>
+  <li>Model deployment, $MD$</li>
+</ol>
+
+<p>The total cost is then:</p>
+
+\[C(\mathcal{S_{AI}) = DC + MT + MD\]
+
+<p>Each part can take on different forms depending on the strategy. At a high level, we’d expect data collection and storage to increase as the amount of data points increases but with decreasing marginal costs. Model training could depend on the number of datapoints, but likely at a lower rate than data collection. Model deployment we might expect to scale linearly with the number of customers we serve. I’m not an expert in how ad services work, so for this exercise lets abstract the original costs as $C(\mathcal{S_0})$.</p>
+
+<p>So when is an AI strategy, $\mathcal{S_{AI}}$ beneficial? From a business perspective, we want the change in profit to be positive:</p>
+
+<p>\(\Delta P = \Delta R - \Delta C &gt; 0\)
+or
+\(\Delta R &gt; \Delta C\)</p>
+
+<p>Mostly obvious stuff! Plugging in our terms:</p>
+
+\[\sum_{i = 0}^{N} (p_{i, a(\mathcal{S_{AI}},i)} - p_{i, a(\mathcal{S_0},i)}) q_i &gt; DC(\mathcal{S_{AI}) + MT(\mathcal{S_{AI}) + MD(\mathcal{S_{AI}) - C(\mathcal{S_{0})\]
+
+<p>We now have a “framework” (s/o consulting interviews) to decide if switching to an “AI strategy” is a good business decision! A business might hire some analysts to project the costs and revenues given some real life models to make these decisions. Going forward, I’ll try some basic functional forms for these terms to get a high-level understanding of which conditions lead to more or less favorable results for our AI strategy.</p>
+
+<h3 id="a-toy-model">A toy model</h3>
+
+
+  </div><a class="u-url" href="/2023/08/22/mlValue.html" hidden></a>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

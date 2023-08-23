@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-11T21:15:57-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Reductase - Welcome to the Jungle, Living Materials for Construction</title><link href="http://localhost:4000/2023/04/11/biomaterials.html" rel="alternate" type="text/html" title="Reductase - Welcome to the Jungle, Living Materials for Construction" /><published>2023-04-11T00:00:00-07:00</published><updated>2023-04-11T00:00:00-07:00</updated><id>http://localhost:4000/2023/04/11/biomaterials</id><content type="html" xml:base="http://localhost:4000/2023/04/11/biomaterials.html"><![CDATA[<p><em>Cause life</em> <br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-22T21:53:09-07:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">When is AIML worth it?</title><link href="http://localhost:4000/2023/08/22/mlValue.html" rel="alternate" type="text/html" title="When is AIML worth it?" /><published>2023-08-22T00:00:00-07:00</published><updated>2023-08-22T00:00:00-07:00</updated><id>http://localhost:4000/2023/08/22/mlValue</id><content type="html" xml:base="http://localhost:4000/2023/08/22/mlValue.html"><![CDATA[<p>Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits.</p>
+
+<p>Recently I’ve been exploring opportuntities in AI/ML X Biotechnology in the context of startups. Several companies have been founded on the premise that artificial intelligence and machine learning can help speed up the discovery process of both drugs, delivery vehicles and targets. If you read twitter or the blogosphere, the potential of new AI/ML techniques to delivery value seems obvious. However, when I talk to biologists on the ground, it seems like we’re still pretty far from actually using ML systems for drug discovery and it’s not totally clear if it will actually generate that much economic value above current techniques (namely random screens or a biologist/chemist using their knowledge to design molecules).</p>
+
+<p>I wanted to try to understand where and when the ML tools that have been developed create “economic value,” in the context of increasing profits. What will follow is an attempt to quantiatively model what properties a ML pipeline needs to improve profits. There is a tradeoff between improved accuracy increasing revenut and the costs of training and serving computational models.</p>
+
+<p>We’ll explore two cases where AI/ML systems are currently seen as viable strategies: targeting advertisements and optimizing drug design. In both we’ll start with a general model with generally defined functions to model the profit change from implmenting such a system. Then we’ll plug in some simple functions to get some order-of-magnitude estimates for what conditions are required to make an AI/ML system profitable.</p>
+
+<h2 id="targeting-advertisement-with-classifiers">Targeting Advertisement with Classifiers</h2>
+
+<p>Every time we open the internet we are bombarded with advertisements: at the top of google results, in the middle of a recipe, or at the bottom of an article. The internet advertising economy is massive, powering the profits of the major tech companies for the last two decades. Can ML push those profits higher? The massive investment in research by firms such as Google and Microsoft seems to suggest so. Let’s dig in!</p>
+
+<h3 id="a-general-model">A general model</h3>
+
+<p>The profit, $ P $, a firm generates is the difference between the revenues, $R$, and the costs $C$.</p>
+
+\[P = R - C\]
+
+<p>Let’s start with the revenue side. For simplicity, lets say a company sells one product. It can serve ads to customer $i \in 1,…,N$. Lets say the company has $K$ different advertisements and can serve each customer any $a \in 1,…,K$. Each customer has a probability of clicking through on the ad served and purchasing the product $p_{i,a}$,and will spend some amount $q_i$. So under some strategy $\mathcal{S}$ that maps customer $i$ to ad $a(\mathcal{S},i)$, the revenue $R(\mathcal{S})$ is:</p>
+
+\[R(\mathcal{S}) =  \sum_{i = 0}^{N} p_{i, a(\mathcal{S},i)} q_i\]
+
+<p>What we’re really interested in the change in profit, and so the change in revenue (and later costs). If we switch from some old strategy $\mathcal{S_0}$ to a new “AI” strategy $\mathcal{S_{AI}}$, the change in revenue, assuming the purchasing amount remains constant, is:</p>
+
+\[\Delta R = R(\mathcal{S_{AI}}) - R(\mathcal{S_0}) = \sum_{i = 0}^{N} (p_{i, a(\mathcal{S_{AI}},i)} - p_{i, a(\mathcal{S_0},i)}) q_i\]
+
+<p>Now let’s turn our attention to the cost side. A general model of the cost of AI is hard to pin down specifically. For this exercise, we’ll decompose the costs of some AI strategy into three parts:</p>
+
+<ol>
+  <li>Data collection and storage, $DC$</li>
+  <li>Model training, $MT$</li>
+  <li>Model deployment, $MD$</li>
+</ol>
+
+<p>The total cost is then:</p>
+
+\[C(\mathcal{S_{AI}) = DC + MT + MD\]
+
+<p>Each part can take on different forms depending on the strategy. At a high level, we’d expect data collection and storage to increase as the amount of data points increases but with decreasing marginal costs. Model training could depend on the number of datapoints, but likely at a lower rate than data collection. Model deployment we might expect to scale linearly with the number of customers we serve. I’m not an expert in how ad services work, so for this exercise lets abstract the original costs as $C(\mathcal{S_0})$.</p>
+
+<p>So when is an AI strategy, $\mathcal{S_{AI}}$ beneficial? From a business perspective, we want the change in profit to be positive:</p>
+
+<p>\(\Delta P = \Delta R - \Delta C &gt; 0\)
+or
+\(\Delta R &gt; \Delta C\)</p>
+
+<p>Mostly obvious stuff! Plugging in our terms:</p>
+
+\[\sum_{i = 0}^{N} (p_{i, a(\mathcal{S_{AI}},i)} - p_{i, a(\mathcal{S_0},i)}) q_i &gt; DC(\mathcal{S_{AI}) + MT(\mathcal{S_{AI}) + MD(\mathcal{S_{AI}) - C(\mathcal{S_{0})\]
+
+<p>We now have a “framework” (s/o consulting interviews) to decide if switching to an “AI strategy” is a good business decision! A business might hire some analysts to project the costs and revenues given some real life models to make these decisions. Going forward, I’ll try some basic functional forms for these terms to get a high-level understanding of which conditions lead to more or less favorable results for our AI strategy.</p>
+
+<h3 id="a-toy-model">A toy model</h3>]]></content><author><name>Archit Verma</name></author><summary type="html"><![CDATA[Summary: Heuristic microeconomic models that show under what conditions ML/AI increases profits.]]></summary></entry><entry><title type="html">Reductase - The Body Electric - Biomolecules for Batteries</title><link href="http://localhost:4000/2023/06/13/batteries.html" rel="alternate" type="text/html" title="Reductase - The Body Electric - Biomolecules for Batteries" /><published>2023-06-13T00:00:00-07:00</published><updated>2023-06-13T00:00:00-07:00</updated><id>http://localhost:4000/2023/06/13/batteries</id><content type="html" xml:base="http://localhost:4000/2023/06/13/batteries.html"><![CDATA[<p><em>Now you can’t hold it</em> <br />
+<em>But you know it’s there</em> <br />
+<em>Here there and everywhere…It’s Electric!</em> <br /></p>
+
+<p>-Marcia Griffiths, Electric Boogie</p>
+
+<p>Electricity generation is responsible for 25% of US emissions [1], and demand is expected to double by 2050 due to electrification of vehicles, heating, and industry [2]. This is one climate problem we know how to solve, however: replace fossil fuels with renewables as quickly as possible. So far, it’s a success story. In 2022, 23% of US electricity came from renewables [3], and more than half of new capacity came from solar photovoltaics (PV) and wind [4]. The scale of the challenge is still huge–to reach net-zero emissions by 2050, we need to double the rate of renewable additions in three years [2]–but in a world with lots of gloomy climate news, the explosive growth of renewable electricity is a cause for hope.</p>
+
+<p>Renewables will allow us to change the foundation of our economy from heat to electrons. Today, we burn fossil fuels and make chemicals and materials at high heat/pressure, releasing CO2 and wasting energy. In an electron-economy, the production of power, chemicals, and materials takes place at room temperature using electrochemical or electromechanical processes. However, realizing this vision will require us to get really good at managing electrons.</p>
+
+<p>For example, solar PV and wind force us to manage variability in electron supply, due to daily and seasonal cycles which we can’t control and weather events which we can’t predict. Once grid capacity is ~80% renewables, grid operators have few tools to meet demand when solar and wind dip [5]. A system whose annual capacity matched annual demand would have 80+ days where instantaneous supply could not meet instantaneous demand [5]. In a system of 100% renewables, meeting demand at all hours requires massive overdeployment of 5-8 times peak capacity, unless we ration electricity [6]. Because the marginal cost of electricity skyrockets in those doldrums, getting from 80% to 100% renewables is extremely challenging.</p>
+
+<p>Top-down electricity modelers often advocate meeting this demand with “firm” low-carbon assets like nuclear energy or natural gas with carbon capture [2,6]. However, the widespread use of nuclear energy is hampered by risks (real and perceived) of accidents, waste, and proliferation. Continued reliance on natural gas maintains the political and economic power of fossil fuel companies, and they might not use their reserves judiciously once they’ve deployed the capital to develop a project. Most pragmatically, both options have much higher capital costs than renewables, and they’re more expensive most hours of the year.</p>
+
+<p>The key to a grid with 100% renewables is Long-Duration Energy Storage (LDES), systems which can discharge at full power for 10+ hours. Grid operators already use Lithium-ion (Li-ion) batteries to shift load by a few hours [7]. Unfortunately, Li-ion batteries are uneconomical for LDES because they have a high capex for storage capacity (&gt;$200/kWh) and can typically only discharge for 4-6 hours. In contrast, recent TEAs suggest that LDES must cost less than $20/kWh with 100-hr storage to have a true impact [8].</p>
+
+<p>One promising technology for LDES is the flow battery. We’ll dig into the tech behind flow batteries below, but any battery needs charge-carrying molecules called electrolytes. Most flow batteries today use electrolytes made with vanadium, a rare, expensive element mostly mined in Russia and China. It also suffers from low energy density and electrode degradation.</p>
+
+<p>That’s where biology comes in: cells have evolved to manipulate electrons with nanoscale precision, repeatedly for decades. For example, every animal cell has &gt;1000 mitochondria, which use high energy electrons to make ATP, the chemical fuel for life. Figure 1 shows the mitochondrial “electron transport chain,” where electrons flow between biomolecular machines to drive ATP synthesis. The exquisite spatial and temporal control of electrons in mitochondria arguably surpasses any engineered system, and it’s happening in every cell all the time.</p>
+
+<p>Can we harness this biological control of electrons, for example by using biomolecules as electrolytes? We think biotech can help us control electrons to build a renewable electron-economy, and we’re going to explore applications in LDES and beyond.</p>
+
+<p>Read the rest <a href="https://reductase.substack.com/p/the-body-electric-biomolecules-for">here</a></p>]]></content><author><name>Archit Verma</name></author><summary type="html"><![CDATA[Now you can’t hold it But you know it’s there Here there and everywhere…It’s Electric!]]></summary></entry><entry><title type="html">Reductase - Welcome to the Jungle, Living Materials for Construction</title><link href="http://localhost:4000/2023/04/11/biomaterials.html" rel="alternate" type="text/html" title="Reductase - Welcome to the Jungle, Living Materials for Construction" /><published>2023-04-11T00:00:00-07:00</published><updated>2023-04-11T00:00:00-07:00</updated><id>http://localhost:4000/2023/04/11/biomaterials</id><content type="html" xml:base="http://localhost:4000/2023/04/11/biomaterials.html"><![CDATA[<p><em>Cause life</em> <br />
 <em>Must be somewhere to be found</em> <br />
 <em>Instead of concrete jungle</em> <br />
 -Bob Marley and the Wailers</p>
